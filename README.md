@@ -99,6 +99,7 @@ Follow these steps to set up and run the project locally:
    2. Generate an App Password from Gmail
       
       Follow these steps to generate an App Password for Gmail:
+      
          1.Sign in to your Google Account.
       
          2.Navigate to the Security section.
