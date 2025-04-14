@@ -114,7 +114,7 @@ Follow these steps to set up and run the project locally:
          key = Fernet.generate_key()
          print(key.decode())
          ```
-      Copy the output and paste it into the ENCRYPT_KEY field in your .env file.
+         Copy the output and paste it into the ENCRYPT_KEY field in your .env file.
 
 10. **Configure Django to Use Environment Variables**
     Ensure your Django settings are configured to read from the .env file. You can use the python-dotenv package for this purpose:
@@ -136,7 +136,7 @@ Follow these steps to set up and run the project locally:
        EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
        EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
        ```
-    By following these steps, you ensure that sensitive information remains secure and that your project is configured correctly for different environments.
+       By following these steps, you ensure that sensitive information remains secure and that your project is configured correctly for different environments.
 
 
 Then, open your browser and navigate to http://127.0.0.1:8000/ to see your project in action.
