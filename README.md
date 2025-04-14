@@ -94,14 +94,14 @@ Follow these steps to set up and run the project locally:
    ```
    Note: Ensure that your .env file is listed in your .gitignore to prevent sensitive data from being committed to version control.
    
-8. Generate a New SECRET_KEY
+8. **Generate a New SECRET_KEY**
    Django uses the SECRET_KEY for cryptographic signing. To generate a new, secure key:
    ```bash
    python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'
    ```
    Copy the output and paste it into the SECRET_KEY field in your .env file.
    
-9. Generate an ENCRYPT_KEY (Optional)
+9. **Generate an ENCRYPT_KEY (Optional)**
    If your project requires an encryption key (e.g., for encrypting sensitive data), you can generate one using Python's cryptography library:
       1. Install the library:
           ```bash
@@ -136,7 +136,7 @@ Follow these steps to set up and run the project locally:
        EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
        EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
        ```
-By following these steps, you ensure that sensitive information remains secure and that your project is configured correctly for different environments.
+    By following these steps, you ensure that sensitive information remains secure and that your project is configured correctly for different environments.
 
 
 Then, open your browser and navigate to http://127.0.0.1:8000/ to see your project in action.
