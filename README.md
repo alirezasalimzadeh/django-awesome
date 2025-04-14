@@ -4,8 +4,8 @@ Django Awesome is a social platform where users can upload and share photos, com
 
 ## Screenshots
 
-<img src="images/home.png" alt="Home Screen" width="250"/>                  <img src="images/comment%20and%20reply.png" alt="Comment and Reply" width="250"/>        
-          <img src="images/inbox%20message.png" alt="Inbox Message" width="250"/>
+<img src="images/home.png" alt="Home Screen" width="250"/>          <img src="images/comment%20and%20reply.png" alt="Comment and Reply" width="250"/>        
+  <img src="images/inbox%20message.png" alt="Inbox Message" width="250"/>
 
 
 
