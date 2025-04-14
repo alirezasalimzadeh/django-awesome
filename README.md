@@ -100,10 +100,15 @@ Follow these steps to set up and run the project locally:
       
       Follow these steps to generate an App Password for Gmail:
          1.Sign in to your Google Account.
+      
          2.Navigate to the Security section.
+      
          3.Enable 2-Step Verification if it is not already active.
+      
          4.Once enabled, go to the App Passwords section.
+      
          5.Select a name, for example Django Project, and click Generate.
+      
          6.Copy the generated password and paste it in the .env file as EMAIL_HOST_PASSWORD.
 
 
