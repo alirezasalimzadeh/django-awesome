@@ -12,7 +12,7 @@ class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, related_name='posts')
     body = models.TextField()
     likes = models.ManyToManyField(User, related_name='likedposts', through='LikedPost')
-    tags = models.ManyToManyField('Tag')
+    tags = models.ManyToManyField('Tag', blank=True)
     created = models.DateTimeField(auto_now_add=True)
     id = models.CharField(max_length=100, primary_key=True, default=uuid.uuid4, unique=True, editable=False)
 
@@ -33,7 +33,7 @@ class LikedPost(models.Model):
 
 
 class Tag(models.Model):
-    name = models.CharField(max_length=20)
+    name = models.CharField(max_length=20, unique=True)
     image = models.ImageField(upload_to="icons/", null=True, blank=True)
     slug = models.SlugField(max_length=20, unique=True)
     order = models.IntegerField(null=True)
