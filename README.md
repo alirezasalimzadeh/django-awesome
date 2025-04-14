@@ -76,45 +76,45 @@ Follow these steps to set up and run the project locally:
    
    Follow the prompts to complete the user creation.
    
-   6. **Run the Development Server**
-      Start the Django development server:
-      ```bash
-         python manage.py runserver
-      ```
+6. **Run the Development Server**
+   Start the Django development server:
+   ```bash
+   python manage.py runserver
+   ```
    
-   To ensure your Django project runs securely and efficiently, follow these steps to set up environment-specific variables:
-   7. **Create a .env File**
-      At the root of your project (same level as manage.py), create a .env file to store sensitive information:
-      ```bash
-      SECRET_KEY=
-      ENCRYPT_KEY=
-      DEBUG=True
-      EMAIL_HOST_USER=
-      EMAIL_HOST_PASSWORD=
-      ```
-      Note: Ensure that your .env file is listed in your .gitignore to prevent sensitive data from being committed to version control.
+To ensure your Django project runs securely and efficiently, follow these steps to set up environment-specific variables:
+7. **Create a .env File**
+   At the root of your project (same level as manage.py), create a .env file to store sensitive information:
+   ```bash
+   SECRET_KEY=
+   ENCRYPT_KEY=
+   DEBUG=True
+   EMAIL_HOST_USER=
+   EMAIL_HOST_PASSWORD=
+   ```
+   Note: Ensure that your .env file is listed in your .gitignore to prevent sensitive data from being committed to version control.
    
-   8. Generate a New SECRET_KEY
+8. Generate a New SECRET_KEY
    Django uses the SECRET_KEY for cryptographic signing. To generate a new, secure key:
       ```bash
       python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'
       ```
       Copy the output and paste it into the SECRET_KEY field in your .env file.
    
-   9. Generate an ENCRYPT_KEY (Optional)
-      If your project requires an encryption key (e.g., for encrypting sensitive data), you can generate one using Python's cryptography library:
-         1. Install the library:
-            ```bash
-            pip install cryptography
-            ```
-         2. Generate the key:
-            ```bash
-            from cryptography.fernet import Fernet
-            
-            key = Fernet.generate_key()
-            print(key.decode())
-            ```
-         Copy the output and paste it into the ENCRYPT_KEY field in your .env file.
+9. Generate an ENCRYPT_KEY (Optional)
+   If your project requires an encryption key (e.g., for encrypting sensitive data), you can generate one using Python's cryptography library:
+   1. Install the library:
+       ```bash
+       pip install cryptography
+       ```
+   2. Generate the key:
+      ```bash
+      from cryptography.fernet import Fernet
+      
+      key = Fernet.generate_key()
+      print(key.decode())
+      ```
+   Copy the output and paste it into the ENCRYPT_KEY field in your .env file.
 
 10. **Configure Django to Use Environment Variables**
     Ensure your Django settings are configured to read from the .env file. You can use the python-dotenv package for this purpose:
@@ -141,7 +141,7 @@ By following these steps, you ensure that sensitive information remains secure a
 
 Then, open your browser and navigate to http://127.0.0.1:8000/ to see your project in action.
 
-7. **Additional Configuration**
+11. **Additional Configuration**
    
    If your project requires environment-specific variables (like SECRET_KEY or DEBUG), create a .env file in the project root based on the provided template (if available).
    For production environments, make sure to configure your static files settings and run:
