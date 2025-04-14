@@ -82,7 +82,7 @@ Follow these steps to set up and run the project locally:
    python manage.py runserver
    ```
    
-To ensure your Django project runs securely and efficiently, follow these steps to set up environment-specific variables:
+   To ensure your Django project runs securely and efficiently, follow these steps to set up environment-specific variables:
 7. **Create a .env File**
    At the root of your project (same level as manage.py), create a .env file to store sensitive information:
    ```bash
