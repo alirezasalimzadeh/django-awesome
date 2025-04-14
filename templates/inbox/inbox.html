@@ -1,0 +1,41 @@
+{% extends 'layouts/d.html' %}{% load static %}
+{% block content %}
+    <inbox class="max-w-screen-lg mx-auto grid grid-cols-5 sm:grid-cols-4 h-[calc(100vh-9rem)] md:h-[calc(100vh-13rem)] shadow-2xl rounded-2xl">
+        <div x-data="{ modal_open: false }" class="col-span-1 bg-slate-10 rounded-l-2xl p-2 overflow-y-auto">
+
+
+            <div class="p-0 sm:p-4 mb-3 sticky top-0 z-10">
+                <a @click="modal_open = true" class="flex cursor-pointer items-center justify-center h-14 sm:h-16 gap-3 bg-gray-800 hover:bg-gray-500 rounded-full shadow-lg px-6 transition-all duration-200 text-white">
+                    <img class="h-6 w-6" src="https://img.icons8.com/ios-filled/50/ffffff/create-new.png" alt="new message icon"/>
+                    <div class="hidden lg:block font-semibold tracking-wide text-white">New Message</div>
+                </a>
+            </div>
+
+
+            <div x-show="modal_open" x-cloak class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+                <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+                <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+                    <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+                        <div class="relative transform overflow-hidden rounded-2xl bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+                            <div @click.away="modal_open = false" class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+                                {% include 'inbox/form_searchuser.html' %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% include 'inbox/my_conversations.html' %}
+        </div>
+        {% include 'inbox/conversation.html' %}
+    </inbox>
+    <script>
+        function scrollToBottom() {
+            const container = document.getElementById("conversation");
+            container.scrollTop = container.scrollHeight;
+        }
+
+        window.onload = function () {
+            scrollToBottom();
+        }
+    </script>
+{% endblock %}

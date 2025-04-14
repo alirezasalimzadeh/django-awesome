@@ -1,0 +1,19 @@
+
+<div id="reply-form" class="flex flex-col md:flex-row gap-1 md:gap-6 w-full opacity-0 translate-y-4 transition-all duration-500 ease-out">
+    <img class="w-14 h-14 object-cover rounded-full" src="{{ user.profile.avatar }}">
+    <form method="POST" action="{% url 'inbox:inbox-newreply' conversation.id %}" class="w-full">
+        {% csrf_token %} {{ new_message_form }}
+        <div class="flex justify-between">
+            <button type="submit" class="mt-1 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Send Message</button>
+            <a class="button secondaryAction ml-1" href="{{ request.META.HTTP_REFERER }}">Cancel</a>
+        </div>
+    </form>
+</div>
+<script>
+    setTimeout(function () {
+        const replyForm = document.getElementById("reply-form");
+        if (replyForm) {
+            replyForm.classList.remove("opacity-0", "translate-y-4");
+        }
+    }, 100);
+</script>

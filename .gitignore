@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*.sqlite3
+
+# Django stuff
+*.log
+*.pot
+*.pyc
+*.mo
+*.db
+*.env
+*.DS_Store
+media/
+staticfiles/
+
+# PyCharm
+.idea/
+*.iml
+
+# VSCode (in case you use it too)
+.vscode/
+
+# Environment
+.env
+venv/
