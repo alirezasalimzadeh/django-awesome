@@ -4,9 +4,9 @@ Django Awesome is a social platform where users can upload and share photos, com
 
 ## Screenshots
 
-<img src="images/images/home.png" alt="Home Screen" width="250"/>
-<img src="images/images/comment%20and%20reply.png" alt="Comment and Reply" width="250"/>
-<img src="images/images/inbox%20message.png" alt="Inbox Message" width="250"/>
+<img src="images/home.png" alt="Home Screen" width="250"/>
+<img src="images/comment%20and%20reply.png" alt="Comment and Reply" width="250"/>
+<img src="images/inbox%20message.png" alt="Inbox Message" width="250"/>
 
 
 ## Django Social Photo App
@@ -84,8 +84,10 @@ Follow the prompts to complete the user creation.
    
 Then, open your browser and navigate to http://127.0.0.1:8000/ to see your project in action.
 
-7.Additional Configuration
-If your project requires environment-specific variables (like SECRET_KEY or DEBUG), create a .env file in the project root based on the provided template (if available).
-For production environments, make sure to configure your static files settings and run:
-# This is a sample terminal command
-python manage.py collectstatic
+7. **Additional Configuration**
+   
+   If your project requires environment-specific variables (like SECRET_KEY or DEBUG), create a .env file in the project root based on the provided template (if available).
+   For production environments, make sure to configure your static files settings and run:
+   ```bash
+   python manage.py collectstatic
+   ```
