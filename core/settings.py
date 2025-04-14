@@ -26,9 +26,9 @@ SECRET_KEY='0saqsb%0$t%c)mg^ag=!8990l31+4&7!0g+ztulcq%^yq6q@=0'
 ENCRYPT_KEY='PKZk1pOCGx_komKLGzQi7tG_mySG3O5uLS8f-2qW6i0='
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DEBUG') == 'True'
+DEBUG = True
 
-ALLOWED_HOSTS = ["localhost", "0.0.0.0", "127.0.0.1"]
+ALLOWED_HOSTS = ["*"]
 
 LOGIN_REDIRECT_URL = '/'
 # Application definition
