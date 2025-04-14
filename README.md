@@ -45,77 +45,66 @@ Follow these steps to set up and run the project locally:
    
    It is highly recommended to use a virtual environment to manage project dependencies:
    On Windows:
-      ```bash
-      python -m venv venv
-      venv\Scripts\activate
+   ```bash
+   python -m venv venv
+   venv\Scripts\activate
    ```
    On macOS and Linux:
-      ```bash
-      python3 -m venv venv
-      source venv/bin/activate
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate
    ```
+ 
 3. **Install Dependencies**
 
    Install the required packages listed in the requirements.txt file:
    ```bash
-      pip install -r requirements.txt
+   pip install -r requirements.txt
    ```
 
 4. **Apply Migrations**
 
    Set up your database by applying Django migrations:
    ```bash
-      python manage.py migrate
+   python manage.py migrate
    ```
+   
 5. **Create a Superuser (Optional)**
    
    To access the Django admin panel, create a superuser:
    ```bash
-      python manage.py createsuperuser
+   python manage.py createsuperuser
    ```
    
-   Follow the prompts to complete the user creation.
-   
 6. **Run the Development Server**
+   
    Start the Django development server:
    ```bash
    python manage.py runserver
    ```
+   Open your browser and go to http://127.0.0.1:8000 to view the project.
+
+## Email Configuration (SMTP)
+
+   To enable email features (e.g., password resets, account verification), you need to securely configure your email settings.
+
+   1. Create a .env File
+      At the root of the project (where the manage.py file is located), create a file named .env with the following content:
+      ```bash
+      EMAIL_HOST_USER=your_email@gmail.com
+      EMAIL_HOST_PASSWORD=your_app_password
+      ```
+      Note: Do not use your regular Gmail password. Instead, use an App Password.
+
+   2. Generate an App Password from Gmail
+      
+      Follow these steps to generate an App Password for Gmail:
+         1.Sign in to your Google Account.
+         2.Navigate to the Security section.
+         3.Enable 2-Step Verification if it is not already active.
+         4.Once enabled, go to the App Passwords section.
+         5.Select a name, for example Django Project, and click Generate.
+         6.Copy the generated password and paste it in the .env file as EMAIL_HOST_PASSWORD.
+
+
    
-   To ensure your Django project runs securely and efficiently, follow these steps to set up environment-specific variables:
-7. **Create a .env File**
-   At the root of your project (same level as manage.py), create a .env file to store sensitive information:
-   ```bash
-   EMAIL_HOST_USER=
-   EMAIL_HOST_PASSWORD=
-   ```
-
-10. **Configure Django to Use Environment Variables**
-    Ensure your Django settings are configured to read from the .env file. You can use the python-dotenv package for this purpose:
-    1. Install python-dotenv:
-        ```bash
-          pip install python-dotenv
-        ```
-    2. In your settings.py, add the following at the top:
-       ```bash
-          import os
-          from dotenv import load_dotenv
-          load_dotenv()
-       ```
-    3. Retrieve environment variables:
-       ```bash
-       EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
-       EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
-       ```
-       By following these steps, you ensure that sensitive information remains secure and that your project is configured correctly for different environments.
-
-
-Then, open your browser and navigate to http://127.0.0.1:8000/ to see your project in action.
-
-11. **Additional Configuration**
-   
-   If your project requires environment-specific variables (like SECRET_KEY or DEBUG), create a .env file in the project root based on the provided template (if available).
-   For production environments, make sure to configure your static files settings and run:
-   ```bash
-   python manage.py collectstatic
-   ```
