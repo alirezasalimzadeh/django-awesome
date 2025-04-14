@@ -96,25 +96,25 @@ Follow these steps to set up and run the project locally:
    
 8. Generate a New SECRET_KEY
    Django uses the SECRET_KEY for cryptographic signing. To generate a new, secure key:
-      ```bash
-      python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'
-      ```
-      Copy the output and paste it into the SECRET_KEY field in your .env file.
+   ```bash
+   python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'
+   ```
+   Copy the output and paste it into the SECRET_KEY field in your .env file.
    
 9. Generate an ENCRYPT_KEY (Optional)
    If your project requires an encryption key (e.g., for encrypting sensitive data), you can generate one using Python's cryptography library:
-   1. Install the library:
-       ```bash
-       pip install cryptography
-       ```
-   2. Generate the key:
-      ```bash
-      from cryptography.fernet import Fernet
+      1. Install the library:
+          ```bash
+          pip install cryptography
+          ```
+      2. Generate the key:
+         ```bash
+         from cryptography.fernet import Fernet
       
-      key = Fernet.generate_key()
-      print(key.decode())
-      ```
-   Copy the output and paste it into the ENCRYPT_KEY field in your .env file.
+         key = Fernet.generate_key()
+         print(key.decode())
+         ```
+      Copy the output and paste it into the ENCRYPT_KEY field in your .env file.
 
 10. **Configure Django to Use Environment Variables**
     Ensure your Django settings are configured to read from the .env file. You can use the python-dotenv package for this purpose:
