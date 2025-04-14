@@ -4,9 +4,10 @@ Django Awesome is a social platform where users can upload and share photos, com
 
 ## Screenshots
 
-![Home Screen](images/home.png)
-![Comment and Reply](images/comment%20and%20reply.png)
-![Inbox Message](images/inbox%20message.png)
+<img src="images/images/home.png" alt="Home Screen" width="250"/>
+<img src="images/images/comment%20and%20reply.png" alt="Comment and Reply" width="250"/>
+<img src="images/images/inbox%20message.png" alt="Inbox Message" width="250"/>
+
 
 ## Django Social Photo App
 
@@ -40,41 +41,47 @@ Follow these steps to set up and run the project locally:
    git clone https://github.com/alirezasalimzadeh/django-awesome.git
    cd django-awesome
    
-2. Create and Activate a Virtual Environment
-It is highly recommended to use a virtual environment to manage project dependencies:
+2. **Create and Activate a Virtual Environment**
+   
+   It is highly recommended to use a virtual environment to manage project dependencies:
+   On Windows:
+      ```bash
+      python -m venv venv
+      venv\Scripts\activate
+   ```
+   On macOS and Linux:
+      ```bash
+      python3 -m venv venv
+      source venv/bin/activate
+   ```
+3. **Install Dependencies**
 
-On Windows:
-# This is a sample terminal command
-python -m venv venv
-venv\Scripts\activate
+   Install the required packages listed in the requirements.txt file:
+   ```bash
+      pip install -r requirements.txt
+   ```
 
-On macOS and Linux:
-# This is a sample terminal command
-python3 -m venv venv
-source venv/bin/activate
+4. **Apply Migrations**
 
-3.Install Dependencies
-Install the required packages listed in the requirements.txt file:
-# This is a sample terminal command
-pip install -r requirements.txt
-
-4.Apply Migrations
-Set up your database by applying Django migrations:
-# This is a sample terminal command
-python manage.py migrate
-
-5.Create a Superuser (Optional)
-To access the Django admin panel, create a superuser:
-# This is a sample terminal command
-python manage.py createsuperuser
-
+   Set up your database by applying Django migrations:
+   ```bash
+      python manage.py migrate
+   ```
+5. **Create a Superuser (Optional)**
+   
+   To access the Django admin panel, create a superuser:
+   ```bash
+      python manage.py createsuperuser
+   ```
+   
 Follow the prompts to complete the user creation.
 
-6.Run the Development Server
-Start the Django development server:
-# This is a sample terminal command
-python manage.py runserver
-
+6. **Run the Development Server**
+   Start the Django development server:
+   ```bash
+      python manage.py runserver
+   ```
+   
 Then, open your browser and navigate to http://127.0.0.1:8000/ to see your project in action.
 
 7.Additional Configuration
