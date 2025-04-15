@@ -7,7 +7,6 @@ from django.db import models
 class Post(models.Model):
     title = models.CharField(max_length=500)
     artist = models.CharField(max_length=500, null=True)
-    # url = models.URLField(max_length=500, null=True)
     image = models.ImageField(upload_to="posts/")
     author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, related_name='posts')
     body = models.TextField()

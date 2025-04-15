@@ -13,7 +13,6 @@ class PostCreateForm(ModelForm):
     )
     class Meta:
         model = Post
-        # fields = '__all__'
         exclude = ['author', 'likes']
         labels = {
             'body': 'Caption',
