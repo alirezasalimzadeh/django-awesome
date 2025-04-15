@@ -5,6 +5,12 @@ from posts.models import *
 
 
 class PostCreateForm(ModelForm):
+    tags = forms.ModelMultipleChoiceField(
+    queryset=Tag.objects.all(),
+    widget=forms.CheckboxSelectMultiple(),
+    required=False,
+    label=''
+    )
     class Meta:
         model = Post
         # fields = '__all__'
