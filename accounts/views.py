@@ -5,7 +5,6 @@ from django.db.models import Count
 from django.http import Http404
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
-
 from accounts.forms import *
 from inbox.forms import InboxNewMessageForm
 from posts.forms import ReplyCreateForm

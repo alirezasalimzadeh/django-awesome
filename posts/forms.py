@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import ModelForm
-
+from django.db.models import Count
 from posts.models import *
 
 
@@ -17,6 +17,7 @@ class PostCreateForm(ModelForm):
             'body': forms.Textarea(attrs={'rows': 3, 'placeholder': 'Add a caption...', 'class': 'font1 text-4xl'}),
             'tags': forms.CheckboxSelectMultiple(),
         }
+            
 
 
 class PostEditForm(ModelForm):
