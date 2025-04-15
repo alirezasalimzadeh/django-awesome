@@ -17,11 +17,9 @@ class PostCreateForm(ModelForm):
         exclude = ['author', 'likes']
         labels = {
             'body': 'Caption',
-            'tags': 'Category',
         }
         widgets = {
             'body': forms.Textarea(attrs={'rows': 3, 'placeholder': 'Add a caption...', 'class': 'font1 text-4xl'}),
-            'tags': forms.CheckboxSelectMultiple(),
         }
             
 
